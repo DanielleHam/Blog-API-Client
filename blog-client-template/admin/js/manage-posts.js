@@ -13,18 +13,20 @@ async function fetchAllPosts() {
               let dateObj = new Date(post.date);
 
               postsHTML += `
-                   <li class="list-group-item">
-                        <p>${post.content}<br> <span class="date">- ${formatDate(dateObj)}</span> </p>
-                        
-                        <div>
+                   <tr class="list-group-item">
+                        <td>${post.title}<br> </td>
+                        <td>${post.author}</td>
+                        <td> <span class="date"> ${formatDate(dateObj)}</span> </td>
+                        <td>
                              <a href="update-post.html?id=${post['_id']}">Update</a> |
                              <a href="#" class="delete-link" data-id="${post['_id']}">Delete</a> 
-                        </div>
-                   </li>
+                        </td>
+                   </tr>
+                   
               `;
          }
 
-         document.getElementById('post-list').innerHTML = postsHTML;
+         document.getElementById('admin-posts').innerHTML = postsHTML;
     } catch (error) {
          console.log(error);
     }

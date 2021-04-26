@@ -11,7 +11,7 @@ function createPostEvent() {
 
 
         try {
-            await fetch('http://localhost:5000/posts/', { //Lägga till + postid?
+            await fetch('http://localhost:5000/posts/', { 
                 method: 'POST', // *GET, POST, PATCH, DELETE, etc.
                 headers: {
                   'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ function createPostEvent() {
                 body: serializeFormToJSON(e.target) // body data type must match "Content-Type" header
             });
 
-            window.location.replace('index.html');
+            window.location.replace('./index.html');
         } catch (error) {
             console.log(error);
         }

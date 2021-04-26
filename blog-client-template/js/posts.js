@@ -14,21 +14,9 @@ async function fetchAllPosts() {
 
       postsHTML += `
                    <li class="list-group-item">
-                        <p>${
-                          post.content
-                        }<br> <span class="date">- ${formatDate(
-        dateObj
-      )}</span> 
-                        </p>
-                        
-                        <div>
-                             <a href="update-pun.html?id=${
-                               post["_id"]
-                             }">Update</a> |
-                             <a href="#" class="delete-link" data-id="${
-                               post["_id"]
-                             }">Delete</a> 
-                        </div>
+                        <h3> ${post.title}</h3>
+                        <p> ${post.author} | <span class="date"> ${formatDate(dateObj)}</span></p>                     
+                        <p> ${post.content}</p>
                    </li>
               `;
     }
