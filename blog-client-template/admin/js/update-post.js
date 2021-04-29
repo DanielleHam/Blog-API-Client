@@ -1,6 +1,7 @@
 window.onload = function () {
   prefillForm();
   updatePostEvent();
+ 
 };
 
 async function prefillForm() {
@@ -21,26 +22,8 @@ async function prefillForm() {
 
     $("#post-content").html(post.content);
 
-    let allTags = [" Sport", " Beer", " Vacation", " Animals", " Shopping"];
-
-    let selectedTags = post.tags;
-
-    let select = document.querySelector("#tags");
-
-    for (let i = 0; i < allTags.length; i++) {
-      var tag = allTags[i];
-      var options = document.createElement("option");
-      options.value = allTags[i];
-      options.text = allTags[i];
-      select.appendChild(options);
-      for (tag in allTags) {
-        if (allTags[i] !== selectedTags[i]) {
-          options.setAttribute("selected", false);
-        } else {
-          options.setAttribute("selected", true);
-        }
-      }
-    }
+    $('#prev-tags').attr('value', post.tags);
+    
   } catch (error) {
     console.log(error);
   }

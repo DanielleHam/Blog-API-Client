@@ -24,7 +24,7 @@
         <h1>Update Post</h1>
       </div>
 
-      <form id="update-post-form" action="">
+      <form id="update-post-form" class="col-8 offset-2" action="">
         <div class="mb-3 form-group">
           <label for="title" class="form-label">Title</label>
           <input type="text" id="title" name="title" class="form-control" />
@@ -40,13 +40,25 @@
           <small class="text-muted"
             >(Hold down CTRL when selecting multiple options)</small
           >
-
+          
           <select
             class="form-select"
             multiple="multiple"
             id="tags"
             name="tags"
-          ></select>
+          >
+          <option value=" Sport">Sport</option>
+          <option value=" Beer">Beer</option>
+          <option value=" Vacation">Vacation</option>
+          <option value=" Animals">Animals</option>
+          <option value=" Shopping">Shopping</option>
+          </select>
+
+          <div class="mt-3">
+            <small class="text-muted">Your previous chosen tags: </small>
+            <input type="text" id="prev-tags" disabled class="form-control">
+          </div>
+
         </div>
 
         <div class="md-3 form-group" id="titleDiv">

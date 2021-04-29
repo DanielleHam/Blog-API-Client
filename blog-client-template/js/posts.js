@@ -23,7 +23,7 @@ async function fetchAllPosts() {
                     <p><strong>Tags: </strong>${
                       post.tags
                     }</p>                    
-                    <p> ${hundred}...</p>
+                    <p> ${hundred}</p>
             
                     <div class="d-flex justify-content-end">
                       <button class="btn btn-success"><a href="post.html?id=${
@@ -44,3 +44,4 @@ async function fetchAllPosts() {
 function formatDate(dateObj) {
   return `${dateObj.getFullYear()}-${dateObj.getMonth()}-${dateObj.getDate()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
 }
+
