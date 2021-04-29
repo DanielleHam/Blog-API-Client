@@ -11,12 +11,11 @@ function createPostEvent() {
 
     try {
       await fetch("http://localhost:5000/posts/", {
-        method: "POST", // *GET, POST, PATCH, DELETE, etc.
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // 'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: serializeFormToJSON(e.target), // body data type must match "Content-Type" header
+        body: serializeFormToJSON(e.target), 
       });
 
       window.location.replace("./index.html");
@@ -31,9 +30,7 @@ function serializeFormToJSON(form) {
   let formData = new FormData(form);
 
   for (let key of formData.keys()) {
-    // console.log(key);
     let inputData = formData.getAll(key);
-    // console.log(inputData);
 
     if (inputData.length > 1) {
       obj[key] = inputData;
@@ -42,6 +39,5 @@ function serializeFormToJSON(form) {
     }
   }
 
-  // console.log(obj);
   return JSON.stringify(obj);
 }

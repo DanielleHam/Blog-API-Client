@@ -57,7 +57,7 @@ function deletePostEvent() {
 
       try {
         await fetch("http://localhost:5000/posts/" + postId, {
-          method: "DELETE", // *GET, POST, PATCH, DELETE, etc.
+          method: "DELETE",
         });
 
         theClickedLink.parentNode.parentNode.remove();

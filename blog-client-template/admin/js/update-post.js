@@ -41,12 +41,11 @@ function updatePostEvent() {
 
     try {
       await fetch("http://localhost:5000/posts/" + postId, {
-        method: "PATCH", // *GET, POST, PATCH, DELETE, etc.
+        method: "PATCH", 
         headers: {
           "Content-Type": "application/json",
-          // 'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: serializeFormToJSON(e.target), // body data type must match "Content-Type" header
+        body: serializeFormToJSON(e.target),
       });
 
       window.location.replace("./index.html");
@@ -55,7 +54,6 @@ function updatePostEvent() {
     }
   });
 }
-console.log("****** function***********");
 
 function serializeFormToJSON(form) {
   let obj = {};
