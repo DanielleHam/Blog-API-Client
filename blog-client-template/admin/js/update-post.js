@@ -24,6 +24,30 @@ async function prefillForm() {
 
     $('#prev-tags').attr('value', post.tags);
     
+    
+  
+    $(function() {
+      $("#tags").each(function(i){
+        
+
+        var delayInMilliseconds = 1000; //1 second
+
+        setTimeout(function() {
+          var a = post.tags;
+            a.forEach(function(entry) {
+              console.log(entry)
+              $("#tags").val(entry).change();
+           });
+         
+        }, delayInMilliseconds);
+
+
+      });
+  });
+
+
+   
+    
   } catch (error) {
     console.log(error);
   }
